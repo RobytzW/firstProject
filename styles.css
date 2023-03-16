@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+
+:root {
+    --lightCyan: hsl(193, 38%, 86%);
+    --neonGreen: hsl(150, 100%, 66%);
+    --grayishBlue: hsl(217, 19%, 38%);
+    --darkGrayishBlue: hsl(217, 19%, 24%);
+    --darkBlue: hsl(218, 23%, 16%);
+    --fontSize: 28px;
+    --containerWidth: 600px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkBlue);
+    min-height: 100vh;
+}
+
+.container {
+    width: min(80%, var(--containerWidth));
+    background-color: var(--darkGrayishBlue);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3.5rem 2rem;
+    gap: 30px;
+    border-radius: 10px;
+}
+
+#title {
+    color: var(--neonGreen);
+    font-size: calc(.5 * var(--fontSize));
+    text-transform: capitalize;
+    letter-spacing: 5px;
+}
+
+#quote {
+    color: var(--lightCyan);
+    font-size: var(--fontSize);
+    text-align: center;
+    font-weight: 800;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.smallLine{
+    display: none;
+}
+
+.smallDivider {
+    display: none;
+}
+
+.randomQuote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: var(--neonGreen);
+    border-radius: 50%;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    border: none;
+    outline: none;
+    transition: all .2s ease-out;
+}
+
+.randomQuote:hover{
+    box-shadow: 0 0 30px var(--neonGreen);
+}
+
+.randomQuote img {
+    transition: all .3s ease-in-out;
+}
+
+.randomQuote:hover img {
+    transform: rotate(180deg);
+    transition: all .3s ease-in-out;
+}
+
+@media(max-width: 450px){
+    .bigDivider{
+        display: none;
+    }
+
+    .smallDivider{
+        display: block;
+    }
+
+    .quote {
+        font-size: calc(.5 * var(--fontSize));
+    }
+
+    .line {
+        display: none;
+    }
+
+    .smallLine{
+        display: block;
+        width: 80%;
+        background-color: white;
+        height: .5px;
+        border-radius: 10px;
+    }
+}
+
+@media(max-width: 635px){
+    .bigDivider{
+        display: none;
+    }
+
+    .smallDivider{
+        display: block;
+    }
+
+    .quote {
+        font-size: calc(.8 * var(--fontSize));
+    }
+
+    .line {
+        width: 100%;
+    }
+}
